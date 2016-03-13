@@ -113,12 +113,12 @@ class DatabaseManager():
 
 
 		timeseries = None
-		# fileList = os.listdir(folder)
-		# for f in fileList:
-		# 	if f == fileName:
-		# 		print "Existing dataset found. Reading from file."
-		# 		timeseries = np.loadtxt(folder +"/"+f ,dtype='float', delimiter = ",",skiprows=0, usecols=None, unpack=False)
-		timeseries = np.loadtxt(folder +"/"+fileName ,dtype='float', delimiter = ",",skiprows=0, usecols=None, unpack=False)
+		fileList = os.listdir(folder)
+		for f in fileList:
+			if f == fileName:
+				print "Existing dataset found. Reading from file."
+				timeseries = np.loadtxt(folder +"/"+f ,dtype='float', delimiter = ",",skiprows=0, usecols=None, unpack=False)
+		
 		if timeseries is None:
 			print folder+"/"+fileName
 			print "Compiling new  dataset"

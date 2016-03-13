@@ -13,6 +13,8 @@ class Algorithm():
 
 	def __init__(self, numStates, batteryType="Pb-A", capped = False, shaved = False, shavingFactor = 1.2):
 		self.capped = capped
+		if(capped):
+			print "CAPPED!!!!!"
 		self.shaved = shaved
 		self.batteryType = batteryType
 		self.numStates = numStates
@@ -258,6 +260,8 @@ class Algorithm():
 			# Get the timeperiod outputs
 			cos = COS_INDEX
 			price = data[timeIndex][self.PRICE_INDEX]
+			if self.capped and price > 300:
+				price = 300
 			dni = data[timeIndex][self.DNI_INDEX]
 			ghi_factor = data[timeIndex][self.GHI_FACTOR_INDEX]
 			ghi = np.multiply(ghi_factor, dni)			

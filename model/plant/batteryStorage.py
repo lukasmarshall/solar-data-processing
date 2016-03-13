@@ -24,9 +24,12 @@ class BatteryStorage():
 		timePeriodsPerDay = float(48)
 		self.lossPerTimePeriod = np.divide(self.selfDischargePerDay, timePeriodsPerDay)
 		oneStorageLevelFraction = 1.0 /  float(storageLevels)
-		self.degradationInterval = int(rount(oneStorageLevelFraction / self.lossPerTimePeriod))
-		self.counter = 0
 		
+		# We find the degradation interval and make sure we can cast it to an integer (float infinity will fail)
+		VERY_BIG_NUMBER = 1e6
+		self.degradationInterval = int(round(min(oneStorageLevelFraction / self.lossPerTimePeriod, VERY_BIG_NUMBER)))
+		self.counter = 0
+	
 
 		# Incorporate Costs
 		capitalCost = np.divide(effectiveCapacityMWh, float(self.maxDod)) * self.costPerKWh * 1000

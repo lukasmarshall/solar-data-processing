@@ -142,7 +142,7 @@ from scripts import solarMarketFactorCapped
 
 
 # Shaved Simulations.
-algorithmRunner.printTimeseries(tracking = False, storageMWh = 2, shaved = True, capped=True)
+# algorithmRunner.printTimeseries(tracking = False, storageMWh = 2, shaved = True, capped=True)
 algorithmRunner.printTimeseries(tracking=True, storageMWh = 2, shaved = True, capped=True)
 # algorithmRunner.printTimeseries(tracking = False, storageMWh = 3, shaved = True, capped=True)
 # algorithmRunner.printTimeseries(tracking=True, storageMWh = 3, shaved = True, capped=True)

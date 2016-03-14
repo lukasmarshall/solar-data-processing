@@ -118,8 +118,8 @@ class Algorithm():
 		
 		totalArrayOutput = 0
 
-		if self.shaved:
-			data = self.shaveNemData(data)
+		# if self.shaved:
+		# 	data = self.shaveNemData(data)
 
 		if tracking:
 			COS_INDEX = self.TRACKING_COS_INDEX

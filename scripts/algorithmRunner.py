@@ -10,7 +10,7 @@ import sys
 
 def printTimeseries(tracking, storageMWh, capped = False, shaved = False):
 	if shaved:
-		shavedString = "Shaved"
+		shavedString = "Shaved10"
 	else:
 		shavedString = ""
 	

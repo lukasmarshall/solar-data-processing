@@ -11,7 +11,7 @@ from multiprocessing import Process, Queue
 
 class Algorithm():
 
-	def __init__(self, numStates, batteryType="Pb-A", capped = False, shaved = False, shavingFactor = 1.2):
+	def __init__(self, numStates, batteryType="Pb-A", capped = False, shaved = False, shavingFactor = 1.1):
 		self.capped = capped
 		if(capped):
 			print "CAPPED!!!!!"

@@ -19,15 +19,15 @@ def printTimeseries(tracking, storageMWh, fractionContracted = 0.25, shaved = Fa
 
 		if tracking:
 			print "Tracking"
-			stateAveragesPath = "/Users/lukemarshall/Documents/Workspace/Thesis/simulationResults/battery/cap300/tracking/average/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
-			averagesPath = "/Users/lukemarshall/Documents/Workspace/Thesis/simulationResults/battery/cap300/tracking/averagesAll/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
-			monthlyPath = "/Users/lukemarshall/Documents/Workspace/Thesis/simulationResults/battery/cap300/tracking/monthly/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
+			stateAveragesPath = "simulationResults/battery/cap300/tracking/average/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
+			averagesPath = "simulationResults/battery/cap300/tracking/averagesAll/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
+			monthlyPath = "simulationResults/battery/cap300/tracking/monthly/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
 
 		else:
 			print "Non-Tracking"
-			stateAveragesPath = "/Users/lukemarshall/Documents/Workspace/Thesis/simulationResults/battery/cap300/fixed/average/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
-			averagesPath = "/Users/lukemarshall/Documents/Workspace/Thesis/simulationResults/battery/cap300/fixed/averagesAll/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
-			monthlyPath = "/Users/lukemarshall/Documents/Workspace/Thesis/simulationResults/battery/cap300/fixed/monthly/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
+			stateAveragesPath = "simulationResults/battery/cap300/fixed/average/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
+			averagesPath = "simulationResults/battery/cap300/fixed/averagesAll/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
+			monthlyPath = "simulationResults/battery/cap300/fixed/monthly/"+batteryType+str(fractionContracted)+"Contracted"+str(storageMWh)+"MWh"+shavedString+".csv"
 
 		monthlyFile = open(monthlyPath, 'w')
 		averagesFile = open(averagesPath, 'w')

@@ -35,6 +35,8 @@ class Algorithm():
 		self.PRICE_INDEX = 6
 		self.DNI_INDEX = 7
 		self.GHI_FACTOR_INDEX = 8
+
+		# Could I have gotten these mixed up?
 		self.FIXED_COS_INDEX = 9
 		self.TRACKING_COS_INDEX = 10
 
@@ -57,7 +59,7 @@ class Algorithm():
 		# Run the dynamic programming algorithm and get the results, which is effectively a series of store/sell decisions.
 		results = self.buildValuesBackwards(startDate, endDate, location, tracking, storageMWh)
 		destinations = results[1]
-		
+		print "Total MWh Generated: "+str(results[4])
 
 		
 		traverseResult = self.traversePath(destinations)
@@ -70,6 +72,7 @@ class Algorithm():
 		self.printResults(results, path)
 		
 		print "Average Storage Level: "+ str(averageStorageLevel)
+
 
 		values = results[0]
 		revPerMWhSolar = np.divide(np.float(values[0][0]), np.float(results[4]))
@@ -163,11 +166,12 @@ class Algorithm():
 			if self.capped:
 				price = min(price, 300)
 			if price > self.shavingFactor * previousPrice:
-				price = price * self.shavingFactor
+				price = previousPrice * self.shavingFactor
 				data[timeIndex][self.PRICE_INDEX] = price
 			elif price < (1 - (self.shavingFactor - 1)) * previousPrice: #or down by more than the shaving factor
-				price = price * (1 - (self.shavingFactor - 1))
+				price = previousPrice * (1 - (self.shavingFactor - 1))
 				data[timeIndex][self.PRICE_INDEX] = price
+			previousPrice = price
 		return data
 
 	def getValueAndDestination(self, storage, price, solarOutputMWh, storageLevel,  nextTimePeriodValues, date):

@@ -160,8 +160,8 @@ from scripts import solarMarketFactorCapped
 # baseloadSwapAlgorithmRunner.printTimeseries(tracking=False, storageMWh = 3, fractionContracted = 0.125, shaved = True)
 # peakloadSwapAlgorithmRunner.printTimeseries(tracking=True, storageMWh = 3, fractionContracted = 0.28, shaved = True)
 # peakloadSwapAlgorithmRunner.printTimeseries(tracking=False, storageMWh = 3, fractionContracted = 0.2, shaved = True)
-# cap300AlgorithmRunner.printTimeseries(tracking=True, storageMWh = 3, fractionContracted = 0.15, shaved = True)
-cap300AlgorithmRunner.printTimeseries(tracking=False, storageMWh = 3, fractionContracted = 0.125, shaved = True)
+cap300AlgorithmRunner.printTimeseries(tracking=True, storageMWh = 3, fractionContracted = 0.15, shaved = True)
+# cap300AlgorithmRunner.printTimeseries(tracking=False, storageMWh = 3, fractionContracted = 0.125, shaved = True)
 
 # baseloadSwapAlgorithmRunner.printTimeseries(tracking=True, storageMWh = 4, fractionContracted = 0.15, shaved = True)
 # baseloadSwapAlgorithmRunner.printTimeseries(tracking=False, storageMWh = 4, fractionContracted = 0.125, shaved = True)

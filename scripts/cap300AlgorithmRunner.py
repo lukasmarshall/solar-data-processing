@@ -94,7 +94,6 @@ def printTimeseries(tracking, storageMWh, fractionContracted = 0.25, shaved = Fa
 			averageRevenue = float(stateAverage[1]) / float(stateAverage[3])
 			averageStorageLevel = float(stateAverage[2]) / float(stateAverage[3])
 			stateAveragesFile.write(str(state)+", "+str(averageRevenue)+", "+str(averageStorageLevel)+"\n")
-		break
 
 
 def getStrikePrice(startDate, endDate, location):
